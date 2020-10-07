@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Parte 1
+      // 1. obtener el div(root)
+      // 2. crear un div
+      // 3. insertarle el texto Hola Mundo
+      // 4. agregar el nuevo div al root
+
+      // Parte 2
+      // 1. el div root no existe, deben crearlo primero.
+      // 2. el div root debe tener el id root
+      // 3. agregar el div root al body
+      // usar la funcion setAtrribute
+      // div.setAttribute('id', 'sarasa');
+      //   const root = document.getElementById("root");
+      const root = document.createElement("div");
+      root.setAttribute("id", "root");
+      const div = document.createElement("div");
+      div.textContent = "Hola Mundo";
+      root.appendChild(div);
+      document.body.appendChild(root);
+    </script>
+  </body>
+</html>

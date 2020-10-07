@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script type="module">
+      // props => Propiedades
+      // React.creatElement('tipo', 'propiedades')
+      const root = document.getElementById("root");
+      const span1 = React.createElement("span", { children: "Hola" });
+      const span2 = React.createElement("span", { children: " Mundo" });
+      const div = React.createElement("div", {
+        className: "contenedor",
+        children: [span1, span2],
+      });
+      ReactDOM.render(div, root);
+    </script>
+  </body>
+</html>

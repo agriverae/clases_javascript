@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+        // JSX es una expresión
+
+        const mensajeMayuscula = {
+            mensaje: "Hola chicos",
+            esMayuscula: true,
+        }
+
+        const mensajeMinuscula = {
+            mensaje: "Adios",
+            esMayuscula: false,
+        }
+
+        function crearMensaje(props){
+            if(props.esMayuscula){
+                return <h1>{props.mensaje.toUpperCase()}</h1>;
+            } else {
+                return <h1>{props.mensaje}</h1>;
+            }
+        }
+
+        function crearMensajeDesc({esMayuscula, mensaje}){
+            if(esMayuscula){
+                return <h1>{mensaje.toUpperCase()}</h1>;
+            } else {
+                return <h1>{mensaje}</h1>;
+            }
+        }
+
+        const div = (
+            <div>
+                {crearMensaje(mensajeMayuscula)}
+                {crearMensaje(mensajeMinuscula)}
+                {crearMensajeDesc(mensajeMayuscula)}
+                {crearMensajeDesc(mensajeMinuscula)}
+            </div>
+        )
+
+        ReactDOM.render(div, document.getElementById("root"));
+    </script>
+  </body>
+</html>

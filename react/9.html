@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"> 
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+        // contador - Estado Extendido
+
+        function Contador({valorInicial = 0}){
+            const [value, setValue] = React.useState(valorInicial);
+
+            function sumar(){
+                setValue(value + 1);
+            }
+
+            function restar(){
+                setValue(value - 1);
+            }
+
+            return (
+                <>
+                  <div>{value}</div>
+                  <button onClick={sumar}>+</button>
+                  <button onClick={restar}>-</button>
+                </>
+            )
+        }
+
+        const div = (
+            <div>
+                <Contador valorInicial={5} />
+                <Contador />
+                <Contador valorInicial={15} />
+            </div>
+        )
+
+        ReactDOM.render(div, document.getElementById("root"));
+
+    </script>
+  </body>
+</html>

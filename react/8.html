@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"> 
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+        // estado
+
+        function InputEspecial(){
+            const [valor, setValor] = React.useState('');
+
+            function cuandoEscriba(e){
+                setValor(e.target.value.toLowerCase());
+            }
+
+            return (
+                <>
+                    <label>Escribe tu nombre</label>
+                    <input value={valor} onChange={cuandoEscriba} />
+                    <h1>Hola {valor}</h1>
+                </>
+            )
+        }
+
+        const div = (
+            <div>
+                <InputEspecial />
+            </div>
+        )
+
+        ReactDOM.render(div, document.getElementById("root"));
+
+    </script>
+  </body>
+</html>
